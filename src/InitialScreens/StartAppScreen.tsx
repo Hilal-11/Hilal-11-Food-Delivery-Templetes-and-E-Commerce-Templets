@@ -31,52 +31,39 @@ function StartAppScreen() {
              className='absolute w-[20px] h-[20px] rounded-full border-[2px] border-orange-400'></motion.span>
         </div>
         
-        <div className=' relative lg:inset-0 top-[25%]'>
-            <motion.img
-                initial={{
-                    opacity: 0,
-                    x: -100,
-                    scale: 0.98
+                <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center h-full pt-8 lg:pt-0 lg:gap-12">
+                    <motion.div
+                        initial={{ opacity: 0, x: -60, scale: 0.98 }}
+                        animate={{ opacity: 1, x: 0, scale: 1 }}
+                        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.6 }}
+                        className="w-full lg:w-1/2 flex justify-center"
+                    >
+                        <motion.img
+                            src="https://png.pngtree.com/png-clipart/20250423/original/pngtree-smiling-delivery-boy-on-orange-moped-with-paper-bag-png-image_20836006.png"
+                            alt="Smiling delivery rider on orange moped"
+                            className="w-82 sm:w-[500px] lg:w-[550px] mx-auto"
+                        />
+                    </motion.div>
 
-                }}
-                animate={{
-                    opacity: 1,
-                    x: 1,
-                    scale: 1,
+                    <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, ease: 'easeOut', delay: 0.9 }}
+                        className="w-full lg:w-1/2 px-4 mt-8 lg:mt-0 text-center lg:text-left"
+                    >
+                        <h1 className="text-2xl lg:text-4xl Inter-bold mb-4">Fast & Friendly Delivery</h1>
+                        <p className="text-base lg:text-lg text-neutral-700 mb-6">Get your favorite items delivered quickly by our reliable riders. Track your order and enjoy fast checkout.</p>
 
-                }}
-                transition={{
-                    duration: 0.3,
-                    ease: 'easeInOut',
-                    delay: 1,
-                }}
-            className=' lg:w-[550px] w-[600px] mx-auto fill-white drop-shadow-xl/50' src="https://png.pngtree.com/png-clipart/20250423/original/pngtree-smiling-delivery-boy-on-orange-moped-with-paper-bag-png-image_20836006.png" alt="OOPS Error" />
-        </div>
-
-        <div className='flex justify-center items-end absolute inset-0 bottom-5 w-full px-2'>
-            <motion.button
-                initial={{
-                    opacity: 0,
-                    y: 10,
-                    scale: 0.98,
-
-                }}
-                animate={{
-                    opacity: 1,
-                    y: 1,
-                    scale: 1,
-
-
-                }}
-                transition={{
-                    duration: 0.3,
-                    ease: 'easeInOut',
-                    delay: 1,
-                }}
-            className='lg:w-[400px] cursor-pointer w-full py-5 rounded-xl bg-gradient-to-r from-[#e9a920ff] to-[hsla(1,92%,47%,1)] text-white Inter-bold'
-                onClick={() => navigate('/introduce')}
-            >Next</motion.button>
-        </div>
+                        <motion.button
+                            whileHover={{ scale: 1.03 }}
+                            whileTap={{ scale: 0.98 }}
+                            className="lg:w-[320px] w-full py-4 rounded-xl bg-gradient-to-r from-[#e9a920ff] to-[hsla(1,92%,47%,1)] text-white Inter-bold"
+                            onClick={() => navigate('/introduce')}
+                        >
+                            Next
+                        </motion.button>
+                    </motion.div>
+                </div>
         
     </div>
   )

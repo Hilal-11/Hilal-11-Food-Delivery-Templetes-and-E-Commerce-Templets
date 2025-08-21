@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import Skip from '@/components/Skip'
+import freeDelivery from "@/assets/freeDelivery.webp"
 import { motion } from 'motion/react'
 function ThirdScreen() {
     const navigate = useNavigate()
@@ -26,40 +27,42 @@ function ThirdScreen() {
              <span className='absolute w-[20px] h-[20px] rounded-full border-[2px] border-orange-400'></span>
         </div>
         
-        <div className=' relative lg:inset-0 top-[25%]'>
-            <motion.img
-            initial={{
-                    opacity: 0,
-                    x: -100,
-                    scale: 0.98
+                <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-center h-full pt-8 lg:pt-0 lg:gap-12">
+                    <motion.div
+                        initial={{ opacity: 0, x: -60, scale: 0.98 }}
+                        animate={{ opacity: 1, x: 0, scale: 1 }}
+                        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
+                        className="w-full lg:w-1/2 flex justify-center"
+                    >
+                        <motion.img
+                            src={freeDelivery}
+                            alt="Free delivery"
+                            className="w-auto lg:w-[550px] mx-auto drop-shadow-xl/50"
+                        />
+                    </motion.div>
 
-                }}
-                animate={{
-                    opacity: 1,
-                    x: 1,
-                    scale: 1,
+                    <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, ease: 'easeOut', delay: 0.5 }}
+                        className="w-full lg:w-1/2 px-4 mt-8 lg:mt-0 text-center lg:text-left flex flex-col items-center lg:items-start justify-center"
+                    >
+                        <h1 className='text-xl lg:text-3xl Inter-bold'>Free and Home delivery</h1>
+                        <p className='px-2 text-sm lg:text-base text-neutral-700 max-w-xl mt-2'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In corporis sint corrupti, qui culpa quidem veniam numquam dolorumss.</p>
 
-                }}
-                transition={{
-                    duration: 0.3,
-                    ease: 'easeInOut',
-                    delay: 0.3,
-                }}  className=' lg:w-[550px] w-[600px] mx-auto fill-white drop-shadow-xl/50' src="https://png.pngtree.com/png-clipart/20250423/original/pngtree-smiling-delivery-boy-on-orange-moped-with-paper-bag-png-image_20836006.png" alt="OOPS Error" />
-        </div>
+                        <div className="mt-6 w-full lg:w-auto flex flex-col gap-3 items-center lg:items-start">
+                            <div className="lg:block w-full">
+                                <button className='lg:w-[400px] cursor-pointer w-full py-5 rounded-xl bg-gradient-to-r from-[#e9a920ff] to-[hsla(1,92%,47%,1)] text-white Inter-bold'
+                                        onClick={() => navigate('/authentication/signup')}
+                                >NEXT</button>
+                                <button className='lg:w-[400px] cursor-pointer w-full pt-4 pb-2 rounded-xl Inter-medium text-lg mt-3'
+                                        onClick={() => navigate('/authentication/signup')}
+                                >Skip</button>
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
 
-        <div className='flex justify-center items-end absolute inset-0 bottom-5 w-full px-2'>
-            <div className='grid-cols-1 gap-2 w-full text-center '>
-                <button className='lg:w-[400px] cursor-pointer w-full py-5 rounded-xl       bg-gradient-to-r from-[#e9a920ff] to-[hsla(1,92%,47%,1)] text-white Inter-bold'
-                    onClick={() => navigate('/getStart')}
-                >NEXT</button> <br />
-                <button className='lg:w-[400px] cursor-pointer w-full pt-4 pb-2 rounded-xl  Inter-medium text-lg'
-                    onClick={() => navigate('/getStart')}
-            >Skip</button>
-            </div>
-            
-        </div>
-
-        
     </div>
   )
 }
