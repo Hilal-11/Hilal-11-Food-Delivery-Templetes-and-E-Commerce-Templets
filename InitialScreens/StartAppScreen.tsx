@@ -57,7 +57,7 @@ function StartAppScreen() {
                         <motion.button
                             whileHover={{ scale: 1.03 }}
                             whileTap={{ scale: 0.98 }}
-                            className="lg:w-[320px] w-full py-4 rounded-xl bg-gradient-to-r from-[#e9a920ff] to-[hsla(1,92%,47%,1)] text-white Inter-bold"
+                            className="shadow-md shadow-orange-700 lg:w-[320px] w-full py-4 rounded-xl bg-gradient-to-r from-[#e9a920ff] to-[hsla(1,92%,47%,1)] text-white Inter-bold"
                             onClick={() => navigate('/introduce')}
                         >
                             Next

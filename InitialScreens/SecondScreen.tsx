@@ -54,7 +54,7 @@ function SecondScreen() {
                         <div className="mt-6 w-full lg:w-auto flex flex-col gap-3 items-center lg:items-start">
                             {/* Large screens: show buttons here. Small screens keep the existing bottom absolute buttons (hidden on lg). */}
                             <div className=" lg:block w-full">
-                                <button className='lg:w-[400px] cursor-pointer w-full py-5 rounded-xl bg-gradient-to-r from-[#e9a920ff] to-[hsla(1,92%,47%,1)] text-white Inter-bold'
+                                <button className='shadow-md shadow-orange-700 lg:w-[400px] cursor-pointer w-full py-5 rounded-xl bg-gradient-to-r from-[#e9a920ff] to-[hsla(1,92%,47%,1)] text-white Inter-bold'
                                         onClick={() => navigate('/getStart')}
                                 >NEXT</button>
                                 <button className='lg:w-[400px] cursor-pointer w-full pt-4 pb-2 rounded-xl Inter-medium text-lg mt-3'
