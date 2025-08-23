@@ -1,0 +1,26 @@
+@import "tailwindcss";
+* {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.Inter-medium {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.Inter-bold {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.Inter-extrabold {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+@config "../../tailwind.config.js"
