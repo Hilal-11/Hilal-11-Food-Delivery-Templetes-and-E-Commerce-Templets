@@ -8,18 +8,34 @@ import AboutPage from "@/pages/about";
 import StartAppScreen from "./InitialScreens/StartAppScreen";
 import SecondScreen from "./InitialScreens/SecondScreen";
 import ThirdScreen from "./InitialScreens/ThirdScreen";
+import Signup from "./auth/Signup";
+import Login from "./auth/Login";
+import VarificationCode from "./auth/VarificationCode";
+import ForgetPassword from "./auth/ForgetPassword";
+import ResetPassword from "./auth/ResetPassword";
+import Home from "./main/Home";
 function App() {
   return (
     <>
       <Routes>
+      
+      // Initial Screens
       <Route element={<StartAppScreen />} path="/" />
       <Route element={<SecondScreen />} path="/introduce" />
       <Route element={<ThirdScreen />} path="/getStart" />
 
-      <Route element={<DocsPage />} path="/docs" />
-      <Route element={<PricingPage />} path="/pricing" />
-      <Route element={<BlogPage />} path="/blog" />
-      <Route element={<AboutPage />} path="/about" />
+      // Authentication Routes
+      <Route element={<Signup />} path="/authentication/signup" />
+      <Route element={<Login />} path="/authentication/login" />
+      <Route element={<VarificationCode />} path="/authentication/varification" />
+      <Route element={<ForgetPassword />} path="/authentication/forgetPassword" />
+      <Route element={<ResetPassword />} path="/authentication/resetPassword" />
+
+
+
+      <Route element={<Home />} path="/app/home" />
+
+
     </Routes>
     </>
     
