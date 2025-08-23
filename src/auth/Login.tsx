@@ -6,6 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 import { BsTwitterX } from "react-icons/bs";
 import { FaFacebook } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
+import RadiusEffect from '@/components/RadiusEffect';
 export const EyeSlashFilledIcon = (props) => {
   return (
     <svg
@@ -81,10 +82,10 @@ function Login() {
         {/* left decorative column for large screens only */}
 
         <div className='w-full lg:w-1/2 flex items-center justify-center'>
-          <div className='w-full h-svh lg:h-auto bg-orange-500 max-w-md'>
+          <div className='w-full h-svh lg:h-auto bg-orange-500 lg:max-w-md'>
         <div className='h-[30%] bg-orange-500'>
             <div className='relative px-5 py-5'>
-              <span className='absolute -left-28 -top-0 w-[50px] h-[50px] p-2 rounded-full bg-white hover:bg-gray-100 duration-300  text-black text-2xl flex justify-center items-center'
+              <span className='shadow-md shadow-orange-700 absolute lg:-left-28 lg:-top-0 w-[50px] h-[50px] p-2 rounded-full bg-white hover:bg-gray-100 duration-300  text-black text-2xl flex justify-center items-center'
                 onClick={() => navigate(-1)}
               ><IoChevronBackOutline /></span>
             </div>
@@ -93,8 +94,13 @@ function Login() {
               <p className='text-[18px] text-neutral-100'>Please sign in to your existing account</p>
             </div>
         </div>
-        <div className='w-full h-[70%] bg-zinc-100 rounded-t-[3rem] py-16 px-6'>
-          <form className='space-y-6'>
+        <div className='relative overflow-hidden w-full h-[70%] bg-zinc-100 lg:rounded-[2rem] rounded-t-[3rem] py-5 px-6 shadow-md shadow-orange-800'>
+          <RadiusEffect />
+          <div className='hidden lg:block text-center py-3'>
+              <h1 className='Inter-bold text-3xl text-black'>Login</h1>
+              <p className='text-[15px] text-neutral-800'>Please sign in to your existing account</p>
+            </div>
+          <form className='space-y-6 py-2'>
             <div className=''>
               {/* <label>EMAIL</label> */}
               <Input className='' radius={'md'} size='lg' labelPlacement="outside-top" placeholder='hellocodedev404@example.com' variant='faded'  label="Email" type="email" />
@@ -136,7 +142,7 @@ function Login() {
             </div>
 
             <div className='py-1'>
-              <button className='w-full py-5 rounded-2xl text-white Inter-bold bg-gradient-to-r from-[#e9a920ff] to-[hsla(1,92%,47%,1)]'
+              <button className='w-full py-5 rounded-2xl text-white Inter-bold bg-gradient-to-r from-[#e9a920ff] to-[hsla(1,92%,47%,1)] shadow-md shadow-orange-800'
                 onClick={loginSubmitHandler}
               >Login</button>
             </div>
@@ -146,9 +152,9 @@ function Login() {
                 <p className='my-2 Inter-bold text-center text-orange-600'>OR</p>
               </div>
               <div className='flex justify-evenly gap-1 text-3xl py-4'>
-                <button><FcGoogle /></button>
-                <button><BsTwitterX /></button>
-                <button><FaFacebook /></button>
+                <button className=''><FcGoogle /></button>
+                <button className=''><BsTwitterX /></button>
+                <button className=''><FaFacebook /></button>
               </div>
             </div>
           </form>

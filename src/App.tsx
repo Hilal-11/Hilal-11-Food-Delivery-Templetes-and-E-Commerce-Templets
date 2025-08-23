@@ -13,6 +13,7 @@ import Login from "./auth/Login";
 import VarificationCode from "./auth/VarificationCode";
 import ForgetPassword from "./auth/ForgetPassword";
 import ResetPassword from "./auth/ResetPassword";
+import Home from "./main/Home";
 function App() {
   return (
     <>
@@ -32,10 +33,9 @@ function App() {
 
 
 
-      <Route element={<DocsPage />} path="/docs" />
-      <Route element={<PricingPage />} path="/pricing" />
-      <Route element={<BlogPage />} path="/blog" />
-      <Route element={<AboutPage />} path="/about" />
+      <Route element={<Home />} path="/app/home" />
+
+
     </Routes>
     </>
     
