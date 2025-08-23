@@ -2,6 +2,7 @@ import React from 'react'
 import { IoChevronBackOutline } from "react-icons/io5";
 import {Input} from "@heroui/input";
 import { useNavigate } from 'react-router-dom';
+import RadiusEffect from '@/components/RadiusEffect';
 export const EyeSlashFilledIcon = (props) => {
   return (
     <svg
@@ -79,14 +80,14 @@ function Signup() {
   }
 
   return (
-    <div className='container bg-orange-500 mx-auto py-20'>
-      <div className='lg:flex lg:items-center lg:justify-center lg:h-svh'>
+    <div className='container bg-orange-500 mx-auto'>
+      <div className='border-slate-950 lg:flex lg:items-center lg:justify-center lg:h-svh'>
 
-        <div className='w-full lg:w-1/2'>
-          <div className=' w-full h-svh bg-orange-500'>
-        <div className='lg:h-auto h-[30%] bg-orange-500'>
+        <div className='w-full lg:w-1/2 flex items-center justify-center'>
+          <div className=' w-full h-svh lg:h-auto bg-orange-500 lg:max-w-md'>
+        <div className='h-[30%] bg-orange-500'>
             <div className='relative px-5 py-5'>
-              <span className='absolute -left-14 -top-6 w-[50px] h-[50px] p-2 rounded-full bg-white text-black text-2xl flex justify-center items-center hover:bg-gray-100 duration-300'
+              <span className='shadow-md shadow-orange-700 absolute lg:-left-14 lg:-top-6 w-[50px] h-[50px] p-2 rounded-full bg-white text-black text-2xl flex justify-center items-center hover:bg-gray-100 duration-300'
                 onClick={() => navigate(-1)}
               ><IoChevronBackOutline /></span>
             </div>
@@ -95,8 +96,13 @@ function Signup() {
               <p className='text-[18px] text-neutral-100'>Please sign up to get started</p>
             </div>
         </div>
-        <div className=' w-full lg:h-auto h-[100%] bg-zinc-100 lg:rounded-3xl rounded-t-[3rem] py-16 px-6'>
-          <form className='space-y-8'>
+        <div className='relative overflow-hidden w-full h-[70%] bg-zinc-100 lg:rounded-[2rem] rounded-t-[3rem] py-5 px-6 shadow-md shadow-orange-800'>
+          <RadiusEffect />
+          <div className='hidden lg:block text-center py-3'>
+              <h1 className='Inter-bold text-3xl text-black'>Sign Up</h1>
+              <p className='text-[15px] text-neutral-800'>Please sign up to get started</p>
+            </div>
+          <form className='space-y-8 py-2'>
             <div className=''>
               {/* <label>EMAIL</label> */}
               <Input className='' radius={'md'} size='lg' labelPlacement="outside-top" placeholder='hellocodedev404@example.com' variant='faded'  label="Email" type="email" />
@@ -157,7 +163,7 @@ function Signup() {
 
 
             <div className='py-6'>
-              <button className='w-full py-5 rounded-2xl text-white Inter-bold bg-gradient-to-r from-[#e9a920ff] to-[hsla(1,92%,47%,1)]'
+              <button className='shadow-md shadow-orange-700 w-full py-5 rounded-2xl text-white Inter-bold bg-gradient-to-r from-[#e9a920ff] to-[hsla(1,92%,47%,1)]'
               
                   onClick={handleSignupSubmitHandler}
               >Submit</button>
